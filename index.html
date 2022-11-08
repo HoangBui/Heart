@@ -59,15 +59,15 @@ var settings = {
 
   particles: {
 
-    length:   500, // maximum amount of particles
+    length:   250, // maximum amount of particles
 
     duration:   2, // particle duration in sec
 
-    velocity: 100, // particle velocity in pixels/sec
+    velocity: 200, // particle velocity in pixels/sec
 
     effect: -0.75, // play with this for a nice effect
 
-    size:      30, // particle size in pixels
+    size:      60, // particle size in pixels
 
   },
 
@@ -361,7 +361,6 @@ var ParticlePool = (function() {
     return new Point(
 
       160 * Math.pow(Math.sin(t), 3),
-
       130 * Math.cos(t) - 50 * Math.cos(2 * t) - 20 * Math.cos(3 * t) - 10 * Math.cos(4 * t) + 25
 
     );
@@ -418,18 +417,13 @@ var ParticlePool = (function() {
 
     context.closePath();
 
-    // create the fill
-
-    context.fillStyle = '#ea80b0';
-
-    context.fill();
-
     // create the image
 
     var image = new Image();
-
-    image.src = canvas.toDataURL();
-
+    // image.src = canvas.toDataURL();
+    image.src = "/images/img.png";
+    image.height="40";
+    image.width="40";
     return image;
 
   })();
